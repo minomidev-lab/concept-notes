@@ -35,6 +35,21 @@ describe('buildTree', () => {
     expect(() => buildTree([{ path: 'math/middle/geometry/triangle', title: '삼각형', order: 0 }], labels))
       .toThrow(/geometry/);
   });
+
+  it('order가 같으면 한국어 제목 localeCompare로 tie-break 정렬한다', () => {
+    const tied: ConceptLeaf[] = [
+      { path: 'math/middle/functions/quadratic-function', title: '이차함수', order: 1 },
+      { path: 'math/middle/functions/linear-function', title: '일차함수', order: 1 },
+    ];
+    const tree = buildTree(tied, labels);
+    const concepts = tree[0].levels[0].units[0].concepts;
+    // localeCompare('ko')는 받침 없는 '이'가 받침 있는 '일'보다 앞선다고 판단한다.
+    expect(concepts.map((c) => c.title)).toEqual(['이차함수', '일차함수']);
+  });
+
+  it('빈 배열을 넘기면 빈 트리를 반환한다', () => {
+    expect(buildTree([], labels)).toEqual([]);
+  });
 });
 
 describe('resolveRefs', () => {

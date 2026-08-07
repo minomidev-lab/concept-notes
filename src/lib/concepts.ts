@@ -22,6 +22,7 @@ function labelOf(slug: string, labels: Record<string, string>): string {
   return label;
 }
 
+/** 단원(unit) 순서는 입력 leaves의 등장 순서를 따른다 — 교육과정 순서를 보장하지 않으므로 정렬은 호출자 책임이다. */
 export function buildTree(leaves: ConceptLeaf[], labels: Record<string, string>): SubjectNode[] {
   // subject → level → unit → leaves 중첩 그룹핑
   const grouped = new Map<string, Map<Level, Map<string, ConceptLeaf[]>>>();
