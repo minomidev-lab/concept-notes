@@ -1,0 +1,11 @@
+{
+  "math": "수학",
+  "science": "과학",
+  "korean": "국어",
+  "english": "영어",
+  "elementary": "초등",
+  "middle": "중등",
+  "high": "고등",
+  "patterns": "규칙과 대응",
+  "functions": "함수"
+}
