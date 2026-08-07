@@ -1,0 +1,42 @@
+---
+import '../styles/global.css';
+import 'katex/dist/katex.min.css';
+import { getCollection } from 'astro:content';
+import Sidebar from '../components/Sidebar.astro';
+import { buildTree } from '../lib/concepts';
+import labels from '../../content/labels.json';
+
+interface Props { title: string; currentPath?: string }
+const { title, currentPath } = Astro.props;
+
+const concepts = await getCollection('concepts');
+const tree = buildTree(
+  concepts.map((c) => ({ path: c.id, title: c.data.title, order: c.data.order })),
+  labels,
+);
+---
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} · 나만의 개념노트</title>
+  </head>
+  <body>
+    <header class="topbar">
+      <button id="menu-toggle" aria-label="메뉴 열기">☰</button>
+      <a class="home-link" href={import.meta.env.BASE_URL}>📚 나만의 개념노트</a>
+    </header>
+    <div class="shell">
+      <aside id="sidebar">
+        <Sidebar tree={tree} currentPath={currentPath} />
+      </aside>
+      <main><slot /></main>
+    </div>
+    <script>
+      document.getElementById('menu-toggle')!.addEventListener('click', () => {
+        document.body.classList.toggle('sidebar-open');
+      });
+    </script>
+  </body>
+</html>

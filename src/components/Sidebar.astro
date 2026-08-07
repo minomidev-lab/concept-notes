@@ -1,0 +1,34 @@
+---
+import type { SubjectNode } from '../lib/concepts';
+import { conceptUrl } from '../lib/url';
+
+interface Props { tree: SubjectNode[]; currentPath?: string }
+const { tree, currentPath } = Astro.props;
+const contains = (prefix: string) => !!currentPath && currentPath.startsWith(prefix);
+---
+<nav aria-label="개념 탐색">
+  {tree.map((subject) => (
+    <details open={contains(`${subject.slug}/`)}>
+      <summary>{subject.label}</summary>
+      {subject.levels.map((level) => (
+        <details open={contains(`${subject.slug}/${level.slug}/`)}>
+          <summary>{level.label}</summary>
+          {level.units.map((unit) => (
+            <details open={contains(`${subject.slug}/${level.slug}/${unit.slug}/`)}>
+              <summary>{unit.label}</summary>
+              <ul>
+                {unit.concepts.map((c) => (
+                  <li>
+                    <a class={c.path === currentPath ? 'current' : undefined} href={conceptUrl(c.path)}>
+                      {c.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </details>
+          ))}
+        </details>
+      ))}
+    </details>
+  ))}
+</nav>
