@@ -1,0 +1,11 @@
+# 브레인스토밍 비주얼 컴패니언 세션 파일
+.superpowers/
+
+# 의존성·빌드 산출물 (추후 사이트 구현 시)
+node_modules/
+dist/
+.astro/
+
+# 환경 변수·비밀 정보
+.env
+.env.*
