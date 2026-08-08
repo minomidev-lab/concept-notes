@@ -2,6 +2,7 @@
 import { getCollection, getEntry, render } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ConceptPath from '../components/ConceptPath.astro';
+import EditUI from '../components/EditUI.astro';
 import { resolveRefs } from '../lib/concepts';
 
 export async function getStaticPaths() {
@@ -33,10 +34,17 @@ const NoteContent = noteRendered?.Content;
   <ConceptPath title={concept.data.title} prev={prev} next={next} />
   <article class="concept">
     <h1>{concept.data.title}</h1>
-    <Content />
+    <button class="edit-btn" id="edit-concept" type="button">✏️ 개념 설명 편집</button>
+    <div class="concept-body">
+      <Content />
+    </div>
   </article>
   <section class="my-note">
     <h2>✏️ 나의 이해</h2>
-    {NoteContent ? <NoteContent /> : <p class="empty">아직 작성한 노트가 없습니다.</p>}
+    <button class="edit-btn" id="edit-note" type="button">✏️ 나의 이해 편집</button>
+    <div class="note-body">
+      {NoteContent ? <NoteContent /> : <p class="empty">아직 작성한 노트가 없습니다.</p>}
+    </div>
   </section>
+  <EditUI conceptPath={concept.id} />
 </BaseLayout>

@@ -1,0 +1,48 @@
+---
+interface Props { conceptPath: string }
+const { conceptPath } = Astro.props;
+---
+<div id="edit-root" data-concept-path={conceptPath}>
+  <button id="edit-enter" type="button" aria-label="편집 모드">✏️ 편집</button>
+
+  <div id="editor-overlay" class="overlay" hidden>
+    <div class="overlay-panel">
+      <div class="overlay-toolbar">
+        <strong id="editor-title">노트 편집</strong>
+        <span id="editor-status" role="status"></span>
+        <button id="editor-sketch" type="button">🎨 스케치</button>
+        <button id="editor-save" type="button">저장</button>
+        <button id="editor-close" type="button">닫기</button>
+      </div>
+      <div class="editor-split">
+        <textarea
+          id="editor-input"
+          spellcheck="false"
+          placeholder="마크다운으로 작성하세요. 수식은 $y = ax + b$ 형태로 씁니다."></textarea>
+        <div id="editor-preview" class="editor-preview"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="sketch-overlay" class="overlay" hidden>
+    <div class="overlay-panel">
+      <div class="overlay-toolbar">
+        <strong>🎨 스케치</strong>
+        <label>색
+          <select id="sketch-color">
+            <option value="#1f2328">검정</option>
+            <option value="#c9303e">빨강</option>
+            <option value="#0969da">파랑</option>
+            <option value="#1a7f37">초록</option>
+          </select>
+        </label>
+        <label>굵기 <input id="sketch-width" type="range" min="2" max="16" value="4" /></label>
+        <button id="sketch-eraser" type="button" aria-pressed="false">지우개</button>
+        <button id="sketch-undo" type="button">되돌리기</button>
+        <button id="sketch-save" type="button">저장</button>
+        <button id="sketch-close" type="button">닫기</button>
+      </div>
+      <canvas id="sketch-canvas" width="1200" height="800"></canvas>
+    </div>
+  </div>
+</div>
