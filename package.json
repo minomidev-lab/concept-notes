@@ -8,7 +8,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "test": "vitest run",
-    "e2e": "playwright test"
+    "e2e": "playwright test",
+    "book": "node scripts/make-book.mjs"
   },
   "dependencies": {
     "astro": "^6.3.1",

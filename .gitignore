@@ -13,3 +13,6 @@ dist/
 # Playwright
 test-results/
 playwright-report/
+
+# 책 산출물
+book/
