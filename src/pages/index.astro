@@ -1,7 +1,32 @@
 ---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { buildTree } from '../lib/concepts';
+import { conceptUrl } from '../lib/url';
+import labels from '../../content/labels.json';
+
+const concepts = await getCollection('concepts');
+const tree = buildTree(
+  concepts.map((c) => ({ path: c.id, title: c.data.title, order: c.data.order })),
+  labels,
+);
 ---
-<html lang="ko">
-  <body>
-    <h1>나만의 개념노트 — 준비 중</h1>
-  </body>
-</html>
+<BaseLayout title="홈">
+  <h1>📚 나만의 개념노트</h1>
+  <p>초·중·고 개념을 연결하며 쌓아가는 학습 노트입니다. 왼쪽 트리나 아래 목록에서 개념을 골라보세요.</p>
+  {tree.map((subject) => (
+    <section>
+      <h2>{subject.label}</h2>
+      {subject.levels.map((level) => (
+        <div>
+          <h3>{level.label}</h3>
+          <ul>
+            {level.units.flatMap((u) => u.concepts).map((c) => (
+              <li><a href={conceptUrl(c.path)}>{c.title}</a></li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </section>
+  ))}
+</BaseLayout>
