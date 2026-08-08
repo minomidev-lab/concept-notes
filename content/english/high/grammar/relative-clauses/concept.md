@@ -4,6 +4,7 @@ level: high
 order: 1
 prev:
   - english/middle/grammar/sentence-patterns
+  - english/middle/grammar/conjunctions-clauses
 ---
 
 ## 역할

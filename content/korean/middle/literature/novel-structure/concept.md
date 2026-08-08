@@ -2,6 +2,10 @@
 title: 소설의 구성
 level: middle
 order: 2
+prev:
+  - korean/elementary/literature/story-basics
+next:
+  - korean/high/literature/narrator
 ---
 
 ## 소설의 3요소

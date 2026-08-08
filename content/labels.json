@@ -16,5 +16,11 @@
   "calculus": "미적분",
   "geometry": "도형과 기하",
   "matter": "물질",
-  "literature": "문학"
+  "literature": "문학",
+  "numbers": "수와 연산",
+  "equations": "문자와 식",
+  "statistics": "확률과 통계",
+  "life": "생명",
+  "earth": "지구와 우주",
+  "writing": "읽기와 쓰기"
 }

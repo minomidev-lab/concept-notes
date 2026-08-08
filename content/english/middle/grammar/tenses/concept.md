@@ -7,6 +7,7 @@ prev:
 next:
   - english/high/grammar/perfect-tenses
   - english/middle/grammar/passive-voice
+  - english/middle/grammar/gerund-and-infinitive
 ---
 
 ## 기본 시제
