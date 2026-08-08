@@ -4,6 +4,7 @@ level: elementary
 order: 1
 next:
   - english/middle/grammar/sentence-patterns
+  - english/elementary/grammar/verbs-basics
 ---
 
 ## 핵심 아이디어

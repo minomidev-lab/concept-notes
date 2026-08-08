@@ -4,6 +4,8 @@ level: middle
 order: 3
 prev:
   - science/middle/electricity/current-and-voltage
+next:
+  - science/high/electromagnetism/electromagnetic-induction
 ---
 
 ## 법칙
