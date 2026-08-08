@@ -23,3 +23,17 @@ test('태블릿 세로 화면: 사이드바가 ☰ 버튼으로 열린다', asyn
   await page.getByRole('button', { name: '메뉴 열기' }).click();
   await expect(sidebarLink).toBeInViewport();
 });
+
+test('4과목이 모두 홈에 보인다', async ({ page }) => {
+  await page.goto('./');
+  for (const subject of ['수학', '과학', '국어', '영어']) {
+    await expect(page.getByRole('heading', { level: 2, name: subject })).toBeVisible();
+  }
+});
+
+test('개념 페이지에 댓글 섹션이 있다', async ({ page }) => {
+  await page.route('https://giscus.app/**', (route) => route.abort());
+  await page.goto('science/middle/forces/force-and-motion/');
+  await expect(page.getByRole('heading', { name: '💬 댓글' })).toBeVisible();
+  await expect(page.locator('.giscus')).toBeAttached();
+});

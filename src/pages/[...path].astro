@@ -3,6 +3,7 @@ import { getCollection, getEntry, render } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ConceptPath from '../components/ConceptPath.astro';
 import EditUI from '../components/EditUI.astro';
+import Comments from '../components/Comments.astro';
 import { resolveRefs } from '../lib/concepts';
 
 export async function getStaticPaths() {
@@ -46,5 +47,6 @@ const NoteContent = noteRendered?.Content;
       {NoteContent ? <NoteContent /> : <p class="empty">아직 작성한 노트가 없습니다.</p>}
     </div>
   </section>
+  <Comments />
   <EditUI conceptPath={concept.id} />
 </BaseLayout>
