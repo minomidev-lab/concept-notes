@@ -1,0 +1,17 @@
+---
+import type { ConceptRef } from '../lib/concepts';
+import { conceptUrl } from '../lib/url';
+import labelsJson from '../../content/labels.json';
+
+interface Props { title: string; prev: ConceptRef[]; next: ConceptRef[] }
+const { title, prev, next } = Astro.props;
+const labels = labelsJson as Record<string, string>;
+const short = (r: ConceptRef) => `${r.title}(${labels[r.level]})`;
+---
+<nav class="concept-path" aria-label="개념 연결 경로">
+  {prev.map((r) => <a href={conceptUrl(r.path)}>{short(r)}</a>)}
+  {prev.length > 0 && <span>←</span>}
+  <strong>{title}</strong>
+  {next.length > 0 && <span>→</span>}
+  {next.map((r) => <a href={conceptUrl(r.path)}>{short(r)}</a>)}
+</nav>

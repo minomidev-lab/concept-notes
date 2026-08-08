@@ -1,0 +1,42 @@
+---
+import { getCollection, getEntry, render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ConceptPath from '../components/ConceptPath.astro';
+import { resolveRefs } from '../lib/concepts';
+
+export async function getStaticPaths() {
+  const concepts = await getCollection('concepts');
+  for (const c of concepts) {
+    const folderLevel = c.id.split('/')[1];
+    if (c.data.level !== folderLevel) {
+      throw new Error(
+        `'${c.id}'의 frontmatter level('${c.data.level}')이 폴더 학교급('${folderLevel}')과 다릅니다.`,
+      );
+    }
+  }
+  return concepts.map((concept) => ({ params: { path: concept.id }, props: { concept } }));
+}
+
+const { concept } = Astro.props;
+
+const all = await getCollection('concepts');
+const lookup = new Map(all.map((c) => [c.id, { title: c.data.title, level: c.data.level }]));
+const prev = resolveRefs(concept.data.prev, lookup, concept.id);
+const next = resolveRefs(concept.data.next, lookup, concept.id);
+
+const note = await getEntry('notes', concept.id);
+const { Content } = await render(concept);
+const noteRendered = note ? await render(note) : null;
+const NoteContent = noteRendered?.Content;
+---
+<BaseLayout title={concept.data.title} currentPath={concept.id}>
+  <ConceptPath title={concept.data.title} prev={prev} next={next} />
+  <article class="concept">
+    <h1>{concept.data.title}</h1>
+    <Content />
+  </article>
+  <section class="my-note">
+    <h2>✏️ 나의 이해</h2>
+    {NoteContent ? <NoteContent /> : <p class="empty">아직 작성한 노트가 없습니다.</p>}
+  </section>
+</BaseLayout>
