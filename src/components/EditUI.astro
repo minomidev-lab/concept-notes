@@ -63,6 +63,16 @@ const { conceptPath } = Astro.props;
       <canvas id="sketch-canvas" width="1200" height="800"></canvas>
     </div>
   </div>
+
+  <div id="confirm-overlay" class="overlay" hidden>
+    <div class="overlay-panel confirm-panel" role="alertdialog" aria-labelledby="confirm-message">
+      <p id="confirm-message"></p>
+      <div class="confirm-actions">
+        <button id="confirm-cancel" type="button">취소</button>
+        <button id="confirm-ok" type="button">확인</button>
+      </div>
+    </div>
+  </div>
 </div>
 <script>
   import { initEditUI } from '../lib/client/editor';

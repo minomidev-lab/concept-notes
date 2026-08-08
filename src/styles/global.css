@@ -406,3 +406,25 @@ body.editing .edit-btn { display: inline-block; }
   cursor: pointer;
 }
 #token-save:hover { background: var(--accent-deep); }
+
+/* 편집기 오버레이(z-index 40) 위에 떠야 하는 확인 다이얼로그 */
+#confirm-overlay { z-index: 50; }
+.confirm-panel {
+  height: auto;
+  max-width: 420px;
+  padding: 20px;
+  gap: 16px;
+}
+#confirm-message { margin: 0; font-size: 14px; line-height: 1.7; }
+.confirm-actions { display: flex; justify-content: flex-end; gap: 8px; }
+.confirm-actions button {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 9px 16px;
+  cursor: pointer;
+  background: var(--card);
+  color: var(--ink);
+}
+#confirm-cancel:hover { border-color: var(--accent); color: var(--accent-deep); }
+#confirm-ok { background: var(--accent); color: #fff; border-color: var(--accent); }
+#confirm-ok:hover { background: var(--accent-deep); }

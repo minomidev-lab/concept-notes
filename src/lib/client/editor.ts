@@ -25,6 +25,24 @@ function el<T extends HTMLElement>(id: string): T {
   return document.getElementById(id) as T;
 }
 
+// window.confirm도 prompt처럼 차단 환경에서 무반응(false 고정)이라 자체 다이얼로그를 쓴다
+let confirmResolve: ((ok: boolean) => void) | null = null;
+
+function confirmDialog(message: string): Promise<boolean> {
+  el('confirm-message').textContent = message;
+  el('confirm-overlay').hidden = false;
+  el('confirm-ok').focus();
+  return new Promise((resolve) => {
+    confirmResolve = resolve;
+  });
+}
+
+function closeConfirm(ok: boolean): void {
+  el('confirm-overlay').hidden = true;
+  confirmResolve?.(ok);
+  confirmResolve = null;
+}
+
 export function initEditUI(): void {
   const root = document.getElementById('edit-root');
   if (!root) return;
@@ -43,6 +61,9 @@ export function initEditUI(): void {
   el('token-close').addEventListener('click', () => {
     el('token-overlay').hidden = true;
   });
+
+  el('confirm-ok').addEventListener('click', () => closeConfirm(true));
+  el('confirm-cancel').addEventListener('click', () => closeConfirm(false));
 
   el('token-save').addEventListener('click', () => {
     const value = el<HTMLInputElement>('token-input').value.trim();
@@ -103,7 +124,7 @@ async function openEditor(conceptPath: string, target: Target): Promise<void> {
     state = { conceptPath, target, frontmatter, sha: file?.sha ?? null };
 
     const draft = localStorage.getItem(draftKey(conceptPath, target));
-    if (draft !== null && draft !== body && window.confirm('저장되지 않은 초안이 있습니다. 불러올까요?')) {
+    if (draft !== null && draft !== body && (await confirmDialog('저장되지 않은 초안이 있습니다. 불러올까요?'))) {
       input.value = draft;
     } else {
       input.value = body;
@@ -147,7 +168,7 @@ async function save(): Promise<void> {
     status.textContent = '저장됨 ✓ (사이트 반영까지 1~2분)';
   } catch (err) {
     if (err instanceof ConflictError) {
-      if (window.confirm('원격에 더 새로운 버전이 있습니다. 덮어쓸까요?')) {
+      if (await confirmDialog('원격에 더 새로운 버전이 있습니다. 덮어쓸까요?')) {
         const fresh = await getFile(token, path);
         state.sha = fresh?.sha ?? null;
         await save();
