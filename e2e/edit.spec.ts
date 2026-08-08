@@ -1,0 +1,79 @@
+import { test, expect } from '@playwright/test';
+
+const NOTE_MD = '---\nupdated: 2026-08-08\n---\n\n기존 노트 내용입니다.\n';
+
+function b64(s: string): string {
+  return Buffer.from(s, 'utf-8').toString('base64');
+}
+
+test('토큰 프롬프트를 취소하면 편집 모드로 들어가지 않는다', async ({ page }) => {
+  await page.goto('math/middle/functions/linear-function/');
+  // Playwright는 기본적으로 dialog를 dismiss한다 (프롬프트 취소와 동일)
+  await page.locator('#edit-enter').click();
+  await expect(page.locator('#edit-note')).toBeHidden();
+});
+
+test('편집 모드에서 노트를 수정·저장하면 커밋 요청과 즉시 반영이 일어난다', async ({ page }) => {
+  let putBody: { sha?: string; content?: string } = {};
+  await page.route('https://api.github.com/**', async (route) => {
+    const req = route.request();
+    if (req.method() === 'GET' && req.url().includes('my-note.md')) {
+      await route.fulfill({ json: { content: b64(NOTE_MD), sha: 'sha-old' } });
+    } else if (req.method() === 'PUT' && req.url().includes('my-note.md')) {
+      putBody = req.postDataJSON();
+      await route.fulfill({ json: { content: { sha: 'sha-new' } } });
+    } else {
+      await route.fulfill({ status: 404, json: { message: 'not found' } });
+    }
+  });
+  await page.addInitScript(() => localStorage.setItem('concept-notes:token', 'test-token'));
+
+  await page.goto('math/middle/functions/linear-function/');
+  await page.locator('#edit-enter').click();
+  await page.locator('#edit-note').click();
+
+  const input = page.locator('#editor-input');
+  await expect(input).toHaveValue(/기존 노트 내용/);
+  await input.fill('수정된 노트: 기울기는 변화율이다.');
+  await expect(page.locator('#editor-preview')).toContainText('수정된 노트');
+  await page.locator('#editor-save').click();
+  await expect(page.locator('#editor-status')).toContainText('저장됨');
+
+  expect(putBody.sha).toBe('sha-old');
+  const saved = Buffer.from(putBody.content!, 'base64').toString('utf-8');
+  expect(saved).toContain('수정된 노트: 기울기는 변화율이다.');
+  expect(saved).toMatch(/^---\nupdated: \d{4}-\d{2}-\d{2}\n---\n/);
+
+  await page.locator('#editor-close').click();
+  await expect(page.locator('.my-note .note-body')).toContainText('수정된 노트');
+});
+
+test('저장 충돌 시 확인을 거쳐 덮어쓴다', async ({ page }) => {
+  let putCount = 0;
+  await page.route('https://api.github.com/**', async (route) => {
+    const req = route.request();
+    if (req.method() === 'GET' && req.url().includes('my-note.md')) {
+      await route.fulfill({ json: { content: b64(NOTE_MD), sha: putCount === 0 ? 'sha-old' : 'sha-newer' } });
+    } else if (req.method() === 'PUT') {
+      putCount += 1;
+      if (putCount === 1) {
+        await route.fulfill({ status: 409, json: { message: 'conflict' } });
+      } else {
+        await route.fulfill({ json: { content: { sha: 'sha-final' } } });
+      }
+    } else {
+      await route.fulfill({ status: 404, json: {} });
+    }
+  });
+  await page.addInitScript(() => localStorage.setItem('concept-notes:token', 'test-token'));
+  page.on('dialog', (d) => void d.accept());
+
+  await page.goto('math/middle/functions/linear-function/');
+  await page.locator('#edit-enter').click();
+  await page.locator('#edit-note').click();
+  await page.locator('#editor-input').fill('충돌 테스트 본문');
+  await page.locator('#editor-save').click();
+
+  await expect(page.locator('#editor-status')).toContainText('저장됨');
+  expect(putCount).toBe(2);
+});
