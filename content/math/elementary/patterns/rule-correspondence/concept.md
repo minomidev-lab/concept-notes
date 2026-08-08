@@ -3,7 +3,7 @@ title: 규칙과 대응
 level: elementary
 order: 1
 next:
-  - math/middle/functions/linear-function
+  - math/middle/functions/proportionality
 ---
 
 ## 핵심 아이디어

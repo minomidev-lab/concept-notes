@@ -4,6 +4,7 @@ level: middle
 order: 2
 prev:
   - science/middle/electricity/static-electricity
+  - science/elementary/electricity/electric-circuits
 next:
   - science/middle/electricity/ohms-law
 ---

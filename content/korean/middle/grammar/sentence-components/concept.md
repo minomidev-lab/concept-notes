@@ -4,6 +4,7 @@ level: middle
 order: 1
 prev:
   - korean/elementary/grammar/sentence-structure
+  - korean/middle/grammar/word-classes
 next:
   - korean/high/grammar/grammar-elements
 ---

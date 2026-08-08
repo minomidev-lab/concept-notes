@@ -3,7 +3,7 @@ title: 일차함수
 level: middle
 order: 1
 prev:
-  - math/elementary/patterns/rule-correspondence
+  - math/middle/functions/proportionality
 next:
   - math/middle/functions/quadratic-function
 ---

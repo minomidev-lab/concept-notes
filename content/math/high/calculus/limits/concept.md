@@ -4,6 +4,8 @@ level: high
 order: 1
 prev:
   - math/middle/functions/quadratic-function
+next:
+  - math/high/calculus/derivative
 ---
 
 ## 직관적 정의
