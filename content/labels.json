@@ -13,5 +13,8 @@
   "mechanics": "역학",
   "electromagnetism": "전자기",
   "grammar": "문법",
-  "calculus": "미적분"
+  "calculus": "미적분",
+  "geometry": "도형과 기하",
+  "matter": "물질",
+  "literature": "문학"
 }

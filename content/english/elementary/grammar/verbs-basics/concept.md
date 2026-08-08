@@ -6,6 +6,7 @@ prev:
   - english/elementary/grammar/words-and-sentences
 next:
   - english/middle/grammar/tenses
+  - english/middle/grammar/modal-verbs
 ---
 
 ## 두 종류의 동사

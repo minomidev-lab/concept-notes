@@ -6,6 +6,7 @@ prev:
   - english/elementary/grammar/verbs-basics
 next:
   - english/high/grammar/perfect-tenses
+  - english/middle/grammar/passive-voice
 ---
 
 ## 기본 시제
