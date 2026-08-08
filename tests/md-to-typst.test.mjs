@@ -2,16 +2,18 @@ import { describe, it, expect } from 'vitest';
 import { convertMarkdown, convertInline, imagePathFromUrl } from '../scripts/lib/md-to-typst.mjs';
 
 describe('convertInline', () => {
-  it('굵게는 *…*로 변환한다', () => {
-    expect(convertInline('**일차함수**라고 한다')).toBe('*일차함수*라고 한다');
+  it('굵게는 #strong[…];으로 변환한다 (단어 중간·뒤따르는 괄호에도 안전)', () => {
+    expect(convertInline('**일차함수**라고 한다')).toBe('#strong[일차함수];라고 한다');
+    expect(convertInline('He play**s**.')).toBe('He play#strong[s];.');
+    expect(convertInline('**직선**(기울기)')).toBe('#strong[직선];(기울기)');
   });
 
-  it('기울임은 _…_로 변환한다', () => {
-    expect(convertInline('*동생이* 먹는다')).toBe('_동생이_ 먹는다');
+  it('기울임은 #emph[…];로 변환한다', () => {
+    expect(convertInline('*동생이* 먹는다')).toBe('#emph[동생이]; 먹는다');
   });
 
   it('인라인 수식은 mitex mi로 감싼다 (LaTeX 원문 유지)', () => {
-    expect(convertInline('기울기 $a$는 변화 속도다')).toBe('기울기 #mi(`a`)는 변화 속도다');
+    expect(convertInline('기울기 $a$는 변화 속도다')).toBe('기울기 #mi(`a`);는 변화 속도다');
   });
 
   it('Typst 특수문자를 이스케이프한다', () => {

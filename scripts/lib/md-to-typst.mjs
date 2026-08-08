@@ -18,9 +18,11 @@ export function convertInline(text) {
     return `${SENTINEL}${tokens.length - 1}${SENTINEL}`;
   };
   let s = text;
-  s = s.replace(/\$([^$]+)\$/g, (_, math) => put(`#mi(\`${math}\`)`));
-  s = s.replace(/\*\*([^*]+)\*\*/g, (_, t) => put(`*${escapeTypst(t)}*`));
-  s = s.replace(/\*([^*]+)\*/g, (_, t) => put(`_${escapeTypst(t)}_`));
+  // 인라인 토큰 뒤의 `;`는 Typst 표현식 종결자 — 뒤에 괄호가 와도 함수 호출로 오파싱되지 않는다
+  s = s.replace(/\$([^$]+)\$/g, (_, math) => put(`#mi(\`${math}\`);`));
+  // 기호형(*…*/_…_)은 Typst에서 단어 경계에서만 인식되므로 함수형을 쓴다
+  s = s.replace(/\*\*([^*]+)\*\*/g, (_, t) => put(`#strong[${escapeTypst(t)}];`));
+  s = s.replace(/\*([^*]+)\*/g, (_, t) => put(`#emph[${escapeTypst(t)}];`));
   s = escapeTypst(s);
   s = s.replace(new RegExp(`${SENTINEL}(\\d+)${SENTINEL}`, 'g'), (_, i) => tokens[Number(i)]);
   return s;
