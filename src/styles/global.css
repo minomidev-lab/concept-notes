@@ -182,3 +182,24 @@ body.editing .edit-btn { display: inline-block; }
 /* ---- 댓글 (3단계) ---- */
 .comments { margin-top: 32px; border-top: 1px solid #d0d7de; padding-top: 16px; }
 .comments-hint { color: #57606a; font-size: 14px; }
+
+/* ---- 토큰 인증 다이얼로그 ---- */
+.token-panel { height: auto; max-width: 520px; }
+.token-body { padding: 16px; display: flex; flex-direction: column; gap: 12px; font-size: 14px; }
+.token-body p { margin: 0; }
+.token-guide { color: #57606a; }
+#token-input {
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font: 13px ui-monospace, Consolas, monospace;
+}
+#token-save {
+  align-self: flex-start;
+  background: #1f883d;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  cursor: pointer;
+}

@@ -5,6 +5,24 @@ const { conceptPath } = Astro.props;
 <div id="edit-root" data-concept-path={conceptPath}>
   <button id="edit-enter" type="button" aria-label="편집 모드">✏️ 편집</button>
 
+  <div id="token-overlay" class="overlay" hidden>
+    <div class="overlay-panel token-panel">
+      <div class="overlay-toolbar">
+        <strong>🔑 편집 모드 인증</strong>
+        <button id="token-close" type="button">닫기</button>
+      </div>
+      <div class="token-body">
+        <p>사이트 소유자용 기능입니다. GitHub fine-grained 토큰을 붙여넣으면 이 기기에서 편집 모드가 열립니다. 토큰은 이 브라우저에만 저장됩니다.</p>
+        <p class="token-guide">
+          <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">토큰 발급하러 가기 ↗</a>
+          — Repository access: <code>concept-notes</code>만 선택, Permissions: <code>Contents → Read and write</code>
+        </p>
+        <input id="token-input" type="password" placeholder="github_pat_..." autocomplete="off" />
+        <button id="token-save" type="button">저장하고 편집 시작</button>
+      </div>
+    </div>
+  </div>
+
   <div id="editor-overlay" class="overlay" hidden>
     <div class="overlay-panel">
       <div class="overlay-toolbar">

@@ -30,15 +30,30 @@ export function initEditUI(): void {
   if (!root) return;
   const conceptPath = root.dataset.conceptPath!;
 
+  // window.prompt는 태블릿·임베디드 브라우저에서 차단될 수 있어 자체 다이얼로그를 쓴다
   el('edit-enter').addEventListener('click', () => {
     if (!getToken()) {
-      const token = window.prompt(
-        'GitHub fine-grained 토큰을 입력하세요.\n(concept-notes 저장소 Contents 쓰기 권한 · 이 기기 브라우저에만 저장됩니다)',
-      );
-      if (!token) return;
-      setToken(token);
+      el('token-overlay').hidden = false;
+      el<HTMLInputElement>('token-input').focus();
+      return;
     }
     document.body.classList.toggle('editing');
+  });
+
+  el('token-close').addEventListener('click', () => {
+    el('token-overlay').hidden = true;
+  });
+
+  el('token-save').addEventListener('click', () => {
+    const value = el<HTMLInputElement>('token-input').value.trim();
+    if (!value) {
+      el<HTMLInputElement>('token-input').focus();
+      return;
+    }
+    setToken(value);
+    el<HTMLInputElement>('token-input').value = '';
+    el('token-overlay').hidden = true;
+    document.body.classList.add('editing');
   });
 
   el('edit-note').addEventListener('click', () => void openEditor(conceptPath, 'note'));

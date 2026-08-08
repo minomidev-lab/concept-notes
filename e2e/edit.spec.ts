@@ -6,11 +6,26 @@ function b64(s: string): string {
   return Buffer.from(s, 'utf-8').toString('base64');
 }
 
-test('토큰 프롬프트를 취소하면 편집 모드로 들어가지 않는다', async ({ page }) => {
+test('토큰이 없으면 자체 인증 다이얼로그가 뜨고, 닫으면 편집 모드가 아니다', async ({ page }) => {
   await page.goto('math/middle/functions/linear-function/');
-  // Playwright는 기본적으로 dialog를 dismiss한다 (프롬프트 취소와 동일)
   await page.locator('#edit-enter').click();
+  // window.prompt가 아니라 페이지 자체 다이얼로그여야 한다 (prompt는 차단 환경에서 무반응)
+  await expect(page.locator('#token-overlay')).toBeVisible();
+  await expect(page.locator('#token-overlay a[href*="personal-access-tokens"]')).toBeVisible();
+  await page.locator('#token-close').click();
+  await expect(page.locator('#token-overlay')).toBeHidden();
   await expect(page.locator('#edit-note')).toBeHidden();
+});
+
+test('다이얼로그에서 토큰을 저장하면 편집 모드로 들어간다', async ({ page }) => {
+  await page.goto('math/middle/functions/linear-function/');
+  await page.locator('#edit-enter').click();
+  await page.locator('#token-input').fill('github_pat_test123');
+  await page.locator('#token-save').click();
+  await expect(page.locator('#token-overlay')).toBeHidden();
+  await expect(page.locator('#edit-note')).toBeVisible();
+  const stored = await page.evaluate(() => localStorage.getItem('concept-notes:token'));
+  expect(stored).toBe('github_pat_test123');
 });
 
 test('편집 모드에서 노트를 수정·저장하면 커밋 요청과 즉시 반영이 일어난다', async ({ page }) => {
