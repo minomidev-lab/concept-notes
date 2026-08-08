@@ -160,7 +160,7 @@ export function noteFrontmatter(dateIso: string): string {
 - [ ] **Step 4: 통과 확인**
 
 Run: `npx vitest run`
-Expected: PASS — 기존 7건 + 신규 7건 = 14건
+Expected: PASS — 기존 7건 + 신규 8건 = 15건
 
 - [ ] **Step 5: auth.ts 작성** — `src/lib/client/auth.ts` (localStorage 래퍼 — 단위 테스트 생략, e2e에서 검증)
 
@@ -385,7 +385,7 @@ export async function putFile(
 - [ ] **Step 4: 통과 확인**
 
 Run: `npx vitest run`
-Expected: PASS — 14건 + 신규 7건 = 21건
+Expected: PASS — 15건 + 신규 7건 = 22건
 
 - [ ] **Step 5: Commit**
 
@@ -1223,7 +1223,7 @@ Run: `npm run build && npx playwright test`
 Expected: 8 passed (스모크 3 + 편집 3 + 스케치 2)
 
 Run: `npx vitest run`
-Expected: 21건 통과 (회귀)
+Expected: 22건 통과 (회귀)
 
 - [ ] **Step 5: Commit**
 
@@ -1269,7 +1269,7 @@ Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>"
 - [ ] **Step 3: 최종 회귀 전체 실행**
 
 Run: `npx vitest run && npm run build && npx playwright test`
-Expected: 21건 / 빌드 성공 / 8건 — 전부 통과
+Expected: 22건 / 빌드 성공 / 8건 — 전부 통과
 
 - [ ] **Step 4: Commit + main 병합·배포**
 
@@ -1301,7 +1301,7 @@ Expected: `200`
 
 ## 완료 기준 (2단계 성공 검증)
 
-- [ ] `npx vitest run` — 21건 통과 (기존 7 + textfile 7 + github 7)
+- [ ] `npx vitest run` — 22건 통과 (기존 7 + textfile 8 + github 7)
 - [ ] `npx playwright test` — 8건 통과 (스모크 3 + 편집 3 + 스케치 2), 전부 GitHub API 모킹으로 실토큰 없이 동작
 - [ ] 편집 모드: 토큰 없으면 편집 UI 미노출, 저장 시 my-note.md frontmatter의 updated 자동 갱신, concept.md frontmatter 보존
 - [ ] 충돌(409) 시 덮어쓰기 확인 흐름 동작
