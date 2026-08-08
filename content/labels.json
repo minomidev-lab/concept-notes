@@ -7,5 +7,9 @@
   "middle": "중등",
   "high": "고등",
   "patterns": "규칙과 대응",
-  "functions": "함수"
+  "functions": "함수",
+  "forces": "힘과 운동",
+  "mechanics": "역학",
+  "grammar": "문법",
+  "calculus": "미적분"
 }
