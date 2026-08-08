@@ -4,6 +4,8 @@ level: middle
 order: 2
 prev:
   - math/middle/functions/linear-function
+next:
+  - math/high/calculus/limits
 ---
 
 ## 정의
