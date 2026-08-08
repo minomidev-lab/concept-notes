@@ -4,6 +4,8 @@ level: elementary
 order: 1
 next:
   - math/middle/geometry/triangle-properties
+  - math/middle/geometry/circles
+  - math/middle/geometry/solids
 ---
 
 ## 여러 가지 평면도형

@@ -4,6 +4,7 @@ level: high
 order: 1
 prev:
   - korean/middle/grammar/sentence-components
+  - korean/middle/grammar/phonology
 ---
 
 ## 높임 표현

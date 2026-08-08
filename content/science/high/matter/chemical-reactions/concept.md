@@ -4,6 +4,7 @@ level: high
 order: 1
 prev:
   - science/middle/matter/elements-and-compounds
+  - science/middle/matter/acids-bases
 ---
 
 ## 화학 반응식 쓰기

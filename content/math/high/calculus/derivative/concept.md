@@ -4,6 +4,8 @@ level: high
 order: 2
 prev:
   - math/high/calculus/limits
+next:
+  - math/high/calculus/integral
 ---
 
 ## 평균변화율에서 순간변화율로
