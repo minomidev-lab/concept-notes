@@ -25,7 +25,7 @@ const tree = buildTree(
   <body>
     <header class="topbar">
       <button id="menu-toggle" aria-label="메뉴 열기">☰</button>
-      <a class="home-link" href={import.meta.env.BASE_URL}>📚 나만의 개념노트</a>
+      <a class="home-link" href={`${import.meta.env.BASE_URL.replace(/\/+$/, '')}/`}>📚 나만의 개념노트</a>
     </header>
     <div class="shell">
       <aside id="sidebar">
