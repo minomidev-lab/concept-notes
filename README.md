@@ -15,6 +15,18 @@ npm run dev
 
 빌드·테스트: `npm run build` / `npm run test`(단위) / `npm run e2e`(스모크)
 
+## 책(PDF) 만들기
+
+[Typst](https://typst.app/) 설치(`winget install Typst.Typst`) 후:
+
+```bash
+npm run book -- --include-notes                  # 전체 과목 + 나의 이해 포함
+npm run book -- --subjects=math,science          # 과목 선택 (개념만)
+npm run book -- --out=my-book.pdf                # 출력 파일명 지정
+```
+
+결과는 `book/` 폴더에 생성됩니다 (git 추적 안 함).
+
 ## 설계 문서
 
 - 스펙: `docs/superpowers/specs/2026-08-07-concept-notes-design.md`

@@ -72,7 +72,7 @@ if (chapters.length === 0) {
 
 // ---- Typst 문서 생성 ----
 const typ = [];
-typ.push('#import "@preview/mitex:0.2.5": *');
+typ.push('#import "@preview/mitex:0.2.6": *'); // 0.2.5는 typst 0.15와 비호환
 typ.push('#set text(font: "Malgun Gothic", size: 10.5pt, lang: "ko")');
 typ.push('#set page(paper: "a4", margin: (x: 2.2cm, y: 2.6cm), numbering: "1")');
 typ.push('#set heading(numbering: "1.1")');
