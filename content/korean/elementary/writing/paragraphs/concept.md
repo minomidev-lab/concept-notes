@@ -4,6 +4,7 @@ level: elementary
 order: 1
 next:
   - korean/middle/writing/text-types
+  - english/middle/composition/paragraph-writing
 ---
 
 ## 중심 문장과 뒷받침 문장

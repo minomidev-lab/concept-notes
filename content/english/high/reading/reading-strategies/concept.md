@@ -4,6 +4,8 @@ level: high
 order: 1
 prev:
   - english/high/grammar/relative-clauses
+  - english/middle/reading/main-idea
+  - english/high/vocabulary/etymology-context
 ---
 
 ## 글의 뼈대 먼저

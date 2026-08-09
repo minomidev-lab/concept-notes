@@ -38,5 +38,7 @@
   "number-theory": "정수론",
   "algebra": "대수",
   "olympiad-geometry": "기하",
-  "combinatorics": "조합"
+  "combinatorics": "조합",
+  "vocabulary": "어휘",
+  "composition": "쓰기"
 }
