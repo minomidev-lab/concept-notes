@@ -6,23 +6,46 @@ import { conceptUrl } from '../lib/url';
 import labels from '../../content/labels.json';
 
 const concepts = await getCollection('concepts');
+const notes = await getCollection('notes');
+const noteIds = new Set(notes.map((n) => n.id));
 const tree = buildTree(
-  concepts.map((c) => ({ path: c.id, title: c.data.title, order: c.data.order })),
+  concepts.map((c) => ({
+    path: c.id,
+    title: c.data.title,
+    order: c.data.order,
+    hasNote: noteIds.has(c.id),
+  })),
   labels,
 );
+const totalCount = concepts.length;
+const notedCount = concepts.filter((c) => noteIds.has(c.id)).length;
+const subjectStats = tree.map((subject) => {
+  const all = subject.levels.flatMap((l) => l.units.flatMap((u) => u.concepts));
+  return { slug: subject.slug, total: all.length, noted: all.filter((c) => c.hasNote).length };
+});
+const statOf = (slug: string) => subjectStats.find((s) => s.slug === slug)!;
 ---
 <BaseLayout title="홈">
   <h1>📚 나만의 개념노트</h1>
-  <p>초·중·고 개념을 연결하며 쌓아가는 학습 노트입니다. 왼쪽 트리나 아래 목록에서 개념을 골라보세요.</p>
+  <p>
+    초·중·고 개념을 연결하며 쌓아가는 학습 노트입니다. 왼쪽 트리나 아래 목록에서 개념을 골라보세요.
+    지금까지 <strong>{totalCount}개 개념 중 {notedCount}개</strong>에 나의 이해를 적었습니다.
+  </p>
   {tree.map((subject) => (
     <section>
-      <h2>{subject.label}</h2>
+      <h2>
+        {subject.label}
+        <span class="subject-progress">✏️ {statOf(subject.slug).noted}/{statOf(subject.slug).total}</span>
+      </h2>
       {subject.levels.map((level) => (
         <div>
           <h3>{level.label}</h3>
           <ul>
             {level.units.flatMap((u) => u.concepts).map((c) => (
-              <li><a href={conceptUrl(c.path)}>{c.title}</a></li>
+              <li>
+                <a href={conceptUrl(c.path)}>{c.title}</a>
+                {c.hasNote && <span class="note-dot" title="나의 이해 작성됨">✏</span>}
+              </li>
             ))}
           </ul>
         </div>

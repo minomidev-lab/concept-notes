@@ -20,7 +20,7 @@ const contains = (prefix: string) => !!currentPath && currentPath.startsWith(pre
                 {unit.concepts.map((c) => (
                   <li>
                     <a class={c.path === currentPath ? 'current' : undefined} href={conceptUrl(c.path)}>
-                      {c.title}
+                      {c.title}{c.hasNote && <span class="note-dot" title="나의 이해 작성됨">✏</span>}
                     </a>
                   </li>
                 ))}

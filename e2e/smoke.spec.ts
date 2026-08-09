@@ -37,3 +37,20 @@ test('개념 페이지에 댓글 섹션이 있다', async ({ page }) => {
   await expect(page.getByRole('heading', { name: '💬 댓글' })).toBeVisible();
   await expect(page.locator('.giscus')).toBeAttached();
 });
+
+test('검색으로 개념을 찾아 이동한다', async ({ page }) => {
+  await page.goto('./');
+  await page.locator('#search-open').click();
+  await page.locator('#search-input').fill('옴의');
+  await expect(page.locator('#search-results')).toContainText('옴의 법칙');
+  await page.locator('#search-results a', { hasText: '옴의 법칙' }).click();
+  await expect(page.getByRole('heading', { level: 1, name: '옴의 법칙' })).toBeVisible();
+});
+
+test('노트 작성 여부가 사이드바와 홈에 표시된다', async ({ page }) => {
+  await page.goto('math/middle/functions/linear-function/');
+  const link = page.locator('#sidebar').getByRole('link', { name: /일차함수/ });
+  await expect(link.locator('.note-dot')).toBeAttached();
+  await page.goto('./');
+  await expect(page.locator('main')).toContainText(/개념 중 \d+개/);
+});

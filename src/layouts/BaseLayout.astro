@@ -10,8 +10,15 @@ interface Props { title: string; currentPath?: string }
 const { title, currentPath } = Astro.props;
 
 const concepts = await getCollection('concepts');
+const notes = await getCollection('notes');
+const noteIds = new Set(notes.map((n) => n.id));
 const tree = buildTree(
-  concepts.map((c) => ({ path: c.id, title: c.data.title, order: c.data.order })),
+  concepts.map((c) => ({
+    path: c.id,
+    title: c.data.title,
+    order: c.data.order,
+    hasNote: noteIds.has(c.id),
+  })),
   labels,
 );
 ---
@@ -31,8 +38,24 @@ const tree = buildTree(
   <body>
     <header class="topbar">
       <button id="menu-toggle" aria-label="메뉴 열기">☰</button>
+      <button id="search-open" type="button" aria-label="검색">🔍</button>
       <a class="home-link" href={`${import.meta.env.BASE_URL.replace(/\/+$/, '')}/`}>📚 나만의 개념노트</a>
     </header>
+
+    <div id="search-overlay" class="overlay" hidden>
+      <div class="overlay-panel search-panel">
+        <div class="overlay-toolbar">
+          <input
+            id="search-input"
+            type="search"
+            placeholder="개념 검색 (예: 옴의 법칙, 가정법)"
+            autocomplete="off"
+          />
+          <button id="search-close" type="button">닫기</button>
+        </div>
+        <ul id="search-results" class="search-results"></ul>
+      </div>
+    </div>
     <div class="shell">
       <aside id="sidebar">
         <Sidebar tree={tree} currentPath={currentPath} />
@@ -40,9 +63,11 @@ const tree = buildTree(
       <main><slot /></main>
     </div>
     <script>
+      import { initSearch } from '../lib/client/search';
       document.getElementById('menu-toggle')!.addEventListener('click', () => {
         document.body.classList.toggle('sidebar-open');
       });
+      initSearch();
     </script>
   </body>
 </html>

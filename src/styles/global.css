@@ -428,3 +428,56 @@ body.editing .edit-btn { display: inline-block; }
 #confirm-cancel:hover { border-color: var(--accent); color: var(--accent-deep); }
 #confirm-ok { background: var(--accent); color: #fff; border-color: var(--accent); }
 #confirm-ok:hover { background: var(--accent-deep); }
+
+/* ---- 검색 ---- */
+#search-open {
+  font-size: 16px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 4px 11px;
+  cursor: pointer;
+}
+#search-open:hover { border-color: var(--accent); }
+
+.search-panel { height: auto; max-height: 72vh; max-width: 560px; }
+#search-input {
+  flex: 1;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  background: var(--paper);
+  color: var(--ink);
+}
+#search-input:focus { outline: 2px solid var(--accent); border-color: var(--accent); }
+.search-results {
+  list-style: none;
+  margin: 0;
+  padding: 8px;
+  overflow-y: auto;
+}
+.search-results a {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--ink);
+}
+.search-results a:hover { background: var(--accent-soft); }
+.search-title { font-weight: 700; }
+.search-crumb { font-size: 12px; color: var(--ink-soft); }
+.search-hint { padding: 14px 12px; color: var(--ink-soft); font-size: 14px; }
+
+/* ---- 노트 진행 표시 ---- */
+.note-dot { font-size: 11px; margin-left: 6px; color: #b8860b; }
+.subject-progress {
+  font-size: 14px;
+  color: var(--ink-soft);
+  margin-left: 12px;
+  font-family: var(--font-body);
+  font-weight: 400;
+}

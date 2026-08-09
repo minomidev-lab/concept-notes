@@ -5,6 +5,8 @@ export interface ConceptLeaf {
   path: string;
   title: string;
   order: number;
+  /** '나의 이해'(my-note.md)가 작성된 개념인지 — 사이드바 진행 표시용 */
+  hasNote?: boolean;
 }
 
 export interface UnitNode { slug: string; label: string; concepts: ConceptLeaf[] }
