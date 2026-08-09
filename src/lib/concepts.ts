@@ -13,7 +13,7 @@ export interface SubjectNode { slug: string; label: string; levels: LevelNode[] 
 
 export interface ConceptRef { path: string; title: string; level: Level }
 
-const SUBJECT_ORDER = ['math', 'science', 'korean', 'english', 'social'];
+const SUBJECT_ORDER = ['math', 'science', 'korean', 'english', 'social', 'kmo'];
 const LEVEL_ORDER: Level[] = ['elementary', 'middle', 'high'];
 
 function labelOf(slug: string, labels: Record<string, string>): string {

@@ -4,6 +4,8 @@ level: middle
 order: 3
 prev:
   - math/elementary/geometry/basic-shapes
+next:
+  - kmo/middle/olympiad-geometry/angle-chasing
 ---
 
 ## 원주율과 둘레·넓이

@@ -4,6 +4,7 @@
   "korean": "국어",
   "english": "영어",
   "social": "사회",
+  "kmo": "KMO",
   "elementary": "초등",
   "middle": "중등",
   "high": "고등",
@@ -33,5 +34,9 @@
   "history": "역사",
   "politics": "정치와 시민",
   "economy": "경제",
-  "society": "사회와 문화"
+  "society": "사회와 문화",
+  "number-theory": "정수론",
+  "algebra": "대수",
+  "olympiad-geometry": "기하",
+  "combinatorics": "조합"
 }

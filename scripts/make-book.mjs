@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { convertMarkdown } from './lib/md-to-typst.mjs';
 
-const SUBJECT_ORDER = ['math', 'science', 'korean', 'english', 'social'];
+const SUBJECT_ORDER = ['math', 'science', 'korean', 'english', 'social', 'kmo'];
 const LEVEL_ORDER = ['elementary', 'middle', 'high'];
 
 // ---- CLI 인자 ----

@@ -6,6 +6,7 @@ prev:
   - math/middle/equations/linear-equation
 next:
   - math/high/equations/complex-numbers
+  - kmo/middle/algebra/identities
 ---
 
 ## 정의

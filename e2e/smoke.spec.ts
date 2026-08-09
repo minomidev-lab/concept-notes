@@ -26,7 +26,7 @@ test('태블릿 세로 화면: 사이드바가 ☰ 버튼으로 열린다', asyn
 
 test('모든 과목이 홈에 보인다', async ({ page }) => {
   await page.goto('./');
-  for (const subject of ['수학', '과학', '국어', '영어', '사회']) {
+  for (const subject of ['수학', '과학', '국어', '영어', '사회', 'KMO']) {
     await expect(page.getByRole('heading', { level: 2, name: subject })).toBeVisible();
   }
 });
