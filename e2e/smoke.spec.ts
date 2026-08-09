@@ -9,7 +9,7 @@ test('홈에서 개념 목록이 보인다', async ({ page }) => {
 test('개념 페이지: 본문·연결 경로·나의 이해가 렌더링된다', async ({ page }) => {
   await page.goto('math/middle/functions/linear-function/');
   await expect(page.getByRole('heading', { level: 1, name: '일차함수' })).toBeVisible();
-  await expect(page.getByRole('navigation', { name: '개념 연결 경로' })).toContainText('규칙과 대응(초등)');
+  await expect(page.getByRole('navigation', { name: '개념 연결 경로' })).toContainText('정비례와 반비례(중등)');
   await expect(page.getByRole('heading', { name: '✏️ 나의 이해' })).toBeVisible();
   // KaTeX 조판 확인: 원문 '$y = ax + b$'가 그대로 노출되면 안 된다
   await expect(page.locator('.katex').first()).toBeVisible();
@@ -24,9 +24,9 @@ test('태블릿 세로 화면: 사이드바가 ☰ 버튼으로 열린다', asyn
   await expect(sidebarLink).toBeInViewport();
 });
 
-test('4과목이 모두 홈에 보인다', async ({ page }) => {
+test('모든 과목이 홈에 보인다', async ({ page }) => {
   await page.goto('./');
-  for (const subject of ['수학', '과학', '국어', '영어']) {
+  for (const subject of ['수학', '과학', '국어', '영어', '사회']) {
     await expect(page.getByRole('heading', { level: 2, name: subject })).toBeVisible();
   }
 });

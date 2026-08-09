@@ -3,6 +3,7 @@
   "science": "과학",
   "korean": "국어",
   "english": "영어",
+  "social": "사회",
   "elementary": "초등",
   "middle": "중등",
   "high": "고등",
@@ -27,5 +28,10 @@
   "speech": "화법",
   "sets": "집합과 명제",
   "sequences": "수열",
-  "reading": "독해"
+  "reading": "독해",
+  "geography": "지리",
+  "history": "역사",
+  "politics": "정치와 시민",
+  "economy": "경제",
+  "society": "사회와 문화"
 }
