@@ -4,6 +4,7 @@ level: elementary
 order: 1
 next:
   - math/middle/functions/proportionality
+  - math/high/sequences/sequences-basics
 ---
 
 ## 핵심 아이디어

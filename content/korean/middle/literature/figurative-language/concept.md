@@ -6,6 +6,7 @@ prev:
   - korean/elementary/literature/poetry-basics
 next:
   - korean/high/literature/poetic-speaker
+  - korean/high/literature/classical-literature
 ---
 
 ## 비유

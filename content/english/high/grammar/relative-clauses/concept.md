@@ -5,6 +5,8 @@ order: 1
 prev:
   - english/middle/grammar/sentence-patterns
   - english/middle/grammar/conjunctions-clauses
+next:
+  - english/high/reading/reading-strategies
 ---
 
 ## 역할

@@ -4,6 +4,8 @@ level: high
 order: 1
 prev:
   - science/middle/forces/force-and-motion
+next:
+  - science/high/mechanics/momentum-energy
 ---
 
 ## 제1법칙 — 관성
