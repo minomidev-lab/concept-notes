@@ -34,11 +34,19 @@ const tree = buildTree(
       href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
+    <script is:inline>
+      // 페인트 전에 저장된 테마 적용 (깜빡임 방지)
+      (function () {
+        var t = localStorage.getItem('concept-notes:theme');
+        if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+      })();
+    </script>
   </head>
   <body>
     <header class="topbar">
       <button id="menu-toggle" aria-label="메뉴 열기">☰</button>
       <button id="search-open" type="button" aria-label="검색">🔍</button>
+      <button id="theme-toggle" type="button" aria-label="다크 모드로 전환">🌙</button>
       <a class="home-link" href={`${import.meta.env.BASE_URL.replace(/\/+$/, '')}/`}>📚 나만의 개념노트</a>
     </header>
 
@@ -64,10 +72,12 @@ const tree = buildTree(
     </div>
     <script>
       import { initSearch } from '../lib/client/search';
+      import { initTheme } from '../lib/client/theme';
       document.getElementById('menu-toggle')!.addEventListener('click', () => {
         document.body.classList.toggle('sidebar-open');
       });
       initSearch();
+      initTheme();
     </script>
   </body>
 </html>

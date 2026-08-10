@@ -54,3 +54,13 @@ test('노트 작성 여부가 사이드바와 홈에 표시된다', async ({ pag
   await page.goto('./');
   await expect(page.locator('main')).toContainText(/개념 중 \d+개/);
 });
+
+test('다크 모드 토글이 동작하고 새로고침에도 유지된다', async ({ page }) => {
+  await page.goto('./');
+  await page.locator('#theme-toggle').click();
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
+  await page.reload();
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
+  await page.locator('#theme-toggle').click();
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
+});
