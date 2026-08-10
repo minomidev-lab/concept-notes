@@ -6,6 +6,7 @@ prev:
   - kmo/middle/algebra/identities
 next:
   - kmo/high/algebra/functional-equations
+  - kmo/high/algebra/cauchy-schwarz
 ---
 
 ## 두 수의 산술-기하 평균 부등식

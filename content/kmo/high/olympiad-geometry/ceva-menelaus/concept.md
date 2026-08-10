@@ -4,6 +4,8 @@ level: high
 order: 1
 prev:
   - kmo/middle/olympiad-geometry/power-of-point
+next:
+  - kmo/high/olympiad-geometry/ptolemy
 ---
 
 ## 체바 정리

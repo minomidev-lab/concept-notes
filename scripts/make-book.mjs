@@ -77,13 +77,32 @@ typ.push('#set text(font: "Malgun Gothic", size: 10.5pt, lang: "ko")');
 typ.push('#set page(paper: "a4", margin: (x: 2.2cm, y: 2.6cm), numbering: "1")');
 typ.push('#set heading(numbering: "1.1")');
 
-typ.push('#page(numbering: none)[#align(center + horizon)[');
-typ.push('#text(30pt, weight: "bold")[나만의 개념노트]');
-typ.push('#v(1em)');
-typ.push(`#text(14pt)[${chapters.map((c) => label(c.subject)).join(' · ')}]`);
-typ.push('#v(0.5em)');
-typ.push(`#text(11pt, fill: gray)[${new Date().toISOString().slice(0, 10)}]`);
-typ.push(']]');
+// ---- 표지: 사이트와 같은 '따뜻한 종이 노트' 디자인 ----
+const totalConcepts = chapters.reduce((n, ch) => n + ch.concepts.length, 0);
+const unitCount = new Set(
+  chapters.flatMap((ch) => ch.concepts.map((c) => `${ch.subject}/${c.unit}`)),
+).size;
+const subjectsLine = chapters.map((c) => label(c.subject)).join(' · ');
+const today = new Date().toISOString().slice(0, 10);
+typ.push(`#page(numbering: none, fill: rgb("faf6ec"))[#align(center + horizon)[
+#box(stroke: 2pt + rgb("2f6b4f"), inset: 8pt, radius: 2pt)[
+#box(stroke: 0.75pt + rgb("2f6b4f"), inset: (x: 2.8cm, y: 2.6cm), radius: 1pt)[
+#align(center)[
+#text(11pt, fill: rgb("6f665a"), tracking: 3pt)[MY CONCEPT NOTEBOOK]
+#v(1.6em)
+#box(fill: rgb("ffe08a"), inset: (x: 12pt, y: 2pt), outset: (y: 5pt))[#text(font: ("Batang", "Malgun Gothic"), size: 33pt, weight: "bold", fill: rgb("2c2721"))[나만의 개념노트]]
+#v(1.8em)
+#line(length: 36%, stroke: 1pt + rgb("2f6b4f"))
+#v(1.4em)
+#text(13pt, fill: rgb("2c2721"))[${subjectsLine}]
+#v(0.7em)
+#text(11pt, fill: rgb("6f665a"))[초·중·고 개념 ${totalConcepts}개 · ${unitCount}개 영역]
+#v(2.6em)
+#text(10pt, fill: rgb("6f665a"))[${today} · minomidev-lab.github.io/concept-notes]
+]
+]
+]
+]]`);
 
 typ.push('#outline(depth: 2, title: [목차])');
 typ.push('#pagebreak()');

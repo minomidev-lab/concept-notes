@@ -4,6 +4,8 @@ level: high
 order: 1
 prev:
   - kmo/middle/number-theory/congruence
+next:
+  - kmo/high/number-theory/chinese-remainder
 ---
 
 ## 정리의 내용

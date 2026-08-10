@@ -4,6 +4,8 @@ level: high
 order: 1
 prev:
   - kmo/middle/combinatorics/counting-bijection
+next:
+  - kmo/high/combinatorics/double-counting
 ---
 
 ## 수학적 귀납법
