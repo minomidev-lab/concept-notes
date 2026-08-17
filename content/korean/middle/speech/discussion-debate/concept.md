@@ -4,6 +4,8 @@ level: middle
 order: 1
 prev:
   - korean/elementary/speech/speaking-listening
+next:
+  - korean/high/speech/persuasion
 ---
 
 ## 토의와 토론의 차이

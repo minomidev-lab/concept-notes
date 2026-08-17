@@ -4,6 +4,7 @@ level: middle
 order: 1
 next:
   - social/high/society/cultural-diversity
+  - social/high/society/social-inequality
 ---
 
 ## 사회화, 사회의 구성원이 되어 가는 과정

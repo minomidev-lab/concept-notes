@@ -6,6 +6,7 @@ prev:
   - science/middle/life/cells
 next:
   - science/high/life/genetics
+  - science/high/life/ecosystem
 ---
 
 ## 광합성이란

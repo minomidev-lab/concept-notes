@@ -4,6 +4,8 @@ level: middle
 order: 1
 prev:
   - science/elementary/waves/light-basics
+next:
+  - science/high/waves/electromagnetic-waves
 ---
 
 ## 반사의 법칙

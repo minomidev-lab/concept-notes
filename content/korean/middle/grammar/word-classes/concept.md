@@ -4,6 +4,7 @@ level: middle
 order: 0
 next:
   - korean/middle/grammar/sentence-components
+  - korean/middle/grammar/morphology
 ---
 
 ## 품사란

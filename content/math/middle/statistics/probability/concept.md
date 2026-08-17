@@ -6,6 +6,7 @@ prev:
   - math/elementary/statistics/data-charts
 next:
   - math/high/statistics/statistics-basics
+  - math/high/statistics/conditional-probability
 ---
 
 ## 경우의 수와 확률

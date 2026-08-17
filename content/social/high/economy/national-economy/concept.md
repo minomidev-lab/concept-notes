@@ -4,6 +4,8 @@ level: high
 order: 1
 prev:
   - social/middle/economy/market-price
+next:
+  - social/high/economy/trade
 ---
 
 ## 국내총생산과 물가

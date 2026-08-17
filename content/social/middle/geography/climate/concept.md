@@ -6,6 +6,7 @@ prev:
   - social/elementary/geography/maps-and-regions
 next:
   - social/middle/geography/population-cities
+  - social/middle/geography/natural-disasters
 ---
 
 ## 기후를 이루는 요소

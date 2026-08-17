@@ -6,6 +6,7 @@ prev:
   - math/elementary/geometry/basic-shapes
 next:
   - kmo/middle/olympiad-geometry/angle-chasing
+  - math/high/geometry/analytic-geometry
 ---
 
 ## 원주율과 둘레·넓이
