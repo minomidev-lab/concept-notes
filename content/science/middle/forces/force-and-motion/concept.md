@@ -6,6 +6,7 @@ prev:
   - science/elementary/forces/weight-and-force
 next:
   - science/high/mechanics/newtons-laws
+  - kjso/middle/physics/kinematics
 ---
 
 ## 힘의 표현

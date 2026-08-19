@@ -6,6 +6,7 @@ prev:
   - science/elementary/earth/earth-and-moon
 next:
   - science/middle/earth/weather
+  - kjso/middle/earth-science/plate-tectonics
 ---
 
 ## 암석의 세 종류

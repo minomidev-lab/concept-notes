@@ -6,6 +6,7 @@ prev:
   - science/elementary/life/plant-structure
 next:
   - science/middle/life/photosynthesis
+  - kjso/middle/biology/cell-division
 ---
 
 ## 생물의 기본 단위, 세포
