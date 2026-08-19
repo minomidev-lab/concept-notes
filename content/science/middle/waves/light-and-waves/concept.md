@@ -6,6 +6,7 @@ prev:
   - science/elementary/waves/light-basics
 next:
   - science/high/waves/electromagnetic-waves
+  - science/middle/waves/sound
 ---
 
 ## 반사의 법칙

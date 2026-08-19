@@ -6,6 +6,7 @@ prev:
   - math/middle/functions/quadratic-function
 next:
   - math/high/calculus/derivative
+  - math/high/sequences/series
 ---
 
 ## 직관적 정의

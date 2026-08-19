@@ -4,6 +4,7 @@ level: high
 order: 1
 prev:
   - science/middle/earth/weather
+  - science/elementary/earth/solar-system
 ---
 
 ## 별의 밝기와 거리

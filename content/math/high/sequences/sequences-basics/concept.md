@@ -4,6 +4,8 @@ level: high
 order: 1
 prev:
   - math/elementary/patterns/rule-correspondence
+next:
+  - math/high/sequences/series
 ---
 
 ## 수열이란

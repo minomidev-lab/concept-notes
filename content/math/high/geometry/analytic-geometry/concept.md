@@ -4,6 +4,8 @@ level: high
 order: 2
 prev:
   - math/middle/geometry/circles
+next:
+  - math/high/geometry/vectors
 ---
 
 ## 두 점 사이의 거리

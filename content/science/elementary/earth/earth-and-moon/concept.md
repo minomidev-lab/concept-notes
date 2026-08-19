@@ -4,6 +4,7 @@ level: elementary
 order: 1
 next:
   - science/middle/earth/rocks-and-strata
+  - science/elementary/earth/solar-system
 ---
 
 ## 지구의 자전과 공전
