@@ -4,6 +4,7 @@ level: middle
 order: 1
 prev:
   - science/elementary/life/plant-structure
+  - science/elementary/life/animal-life
 next:
   - science/middle/life/photosynthesis
   - kjso/middle/biology/cell-division

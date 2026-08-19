@@ -4,6 +4,8 @@ level: high
 order: 2
 prev:
   - korean/middle/literature/novel-structure
+next:
+  - korean/high/literature/literary-criticism
 ---
 
 ## 서술자란

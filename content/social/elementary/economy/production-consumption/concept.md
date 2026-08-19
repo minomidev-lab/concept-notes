@@ -4,6 +4,7 @@ level: elementary
 order: 1
 next:
   - social/middle/economy/market-price
+  - social/elementary/economy/saving-finance
 ---
 
 ## 생산과 소비란

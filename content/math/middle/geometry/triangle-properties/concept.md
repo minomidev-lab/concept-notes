@@ -6,6 +6,7 @@ prev:
   - math/elementary/geometry/basic-shapes
 next:
   - math/middle/geometry/pythagorean-theorem
+  - math/middle/geometry/similarity
 ---
 
 ## 내각의 합

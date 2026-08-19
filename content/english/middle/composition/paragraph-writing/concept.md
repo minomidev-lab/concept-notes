@@ -7,6 +7,7 @@ prev:
   - korean/elementary/writing/paragraphs
 next:
   - english/high/composition/essay-structure
+  - english/middle/composition/practical-writing
 ---
 
 ## 문단의 세 요소

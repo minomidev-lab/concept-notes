@@ -4,6 +4,7 @@ level: elementary
 order: 1
 next:
   - social/middle/geography/climate
+  - social/elementary/geography/urban-rural
 ---
 
 ## 지도의 약속

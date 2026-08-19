@@ -4,6 +4,7 @@ level: middle
 order: 2
 prev:
   - kjso/middle/physics/kinematics
+  - science/elementary/matter/heat-transfer
 next:
   - kjso/high/physics/circuit-analysis
 ---

@@ -2,6 +2,8 @@
 title: 분수와 소수
 level: elementary
 order: 1
+prev:
+  - math/elementary/numbers/mixed-operations
 next:
   - math/middle/numbers/integers-rationals
 ---

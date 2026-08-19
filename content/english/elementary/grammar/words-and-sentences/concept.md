@@ -5,6 +5,7 @@ order: 1
 next:
   - english/middle/grammar/sentence-patterns
   - english/elementary/grammar/verbs-basics
+  - english/elementary/vocabulary/numbers-time
 ---
 
 ## 핵심 아이디어
