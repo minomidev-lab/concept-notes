@@ -4,6 +4,7 @@ level: middle
 order: 1
 prev:
   - science/elementary/earth/earth-and-moon
+  - science/elementary/earth/volcano-earthquake
 next:
   - science/middle/earth/weather
   - kjso/middle/earth-science/plate-tectonics

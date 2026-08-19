@@ -6,6 +6,7 @@ prev:
   - math/middle/functions/linear-function
 next:
   - math/high/calculus/limits
+  - math/high/functions/rational-functions
 ---
 
 ## 정의

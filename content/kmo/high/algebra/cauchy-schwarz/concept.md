@@ -4,6 +4,8 @@ level: high
 order: 2
 prev:
   - kmo/middle/algebra/am-gm
+next:
+  - kmo/high/algebra/rearrangement
 ---
 
 ## 정리

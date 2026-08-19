@@ -4,6 +4,8 @@ level: high
 order: 1
 prev:
   - math/middle/geometry/pythagorean-theorem
+next:
+  - math/high/geometry/trig-graphs
 ---
 
 ## 삼각비의 정의

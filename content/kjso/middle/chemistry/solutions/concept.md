@@ -6,6 +6,7 @@ prev:
   - kjso/middle/chemistry/mole
 next:
   - kjso/high/chemistry/equilibrium
+  - kjso/high/chemistry/redox
 ---
 
 ## 농도를 나타내는 두 가지 방법

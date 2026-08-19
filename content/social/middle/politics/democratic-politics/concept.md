@@ -6,6 +6,8 @@ prev:
   - social/elementary/politics/democracy-basics
 next:
   - social/high/politics/constitution-rights
+  - social/high/politics/international-society
+  - social/middle/politics/elections
 ---
 
 ## 국민 주권의 원리

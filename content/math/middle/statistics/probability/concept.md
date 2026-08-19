@@ -7,6 +7,7 @@ prev:
 next:
   - math/high/statistics/statistics-basics
   - math/high/statistics/conditional-probability
+  - math/high/statistics/permutations
 ---
 
 ## 경우의 수와 확률

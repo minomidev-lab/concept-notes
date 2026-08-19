@@ -4,6 +4,7 @@ level: middle
 order: 1
 prev:
   - social/elementary/history/past-and-present
+  - social/middle/history/prehistory
 next:
   - social/middle/history/joseon
 ---

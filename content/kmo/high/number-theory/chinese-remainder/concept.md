@@ -4,6 +4,8 @@ level: high
 order: 2
 prev:
   - kmo/high/number-theory/fermat
+next:
+  - kmo/high/number-theory/euler
 ---
 
 ## 정리

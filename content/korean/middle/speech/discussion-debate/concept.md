@@ -6,6 +6,7 @@ prev:
   - korean/elementary/speech/speaking-listening
 next:
   - korean/high/speech/persuasion
+  - korean/high/speech/interview
 ---
 
 ## 토의와 토론의 차이

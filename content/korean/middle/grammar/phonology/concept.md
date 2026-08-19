@@ -2,6 +2,8 @@
 title: 음운의 변동
 level: middle
 order: 3
+prev:
+  - korean/elementary/grammar/spelling
 next:
   - korean/high/grammar/grammar-elements
 ---

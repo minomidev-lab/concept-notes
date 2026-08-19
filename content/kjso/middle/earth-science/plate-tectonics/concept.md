@@ -6,6 +6,7 @@ prev:
   - science/middle/earth/rocks-and-strata
 next:
   - kjso/middle/earth-science/celestial
+  - kjso/high/earth-science/geologic-time
 ---
 
 ## 판의 경계와 지각 변동

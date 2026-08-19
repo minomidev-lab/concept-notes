@@ -4,6 +4,7 @@ level: elementary
 order: 1
 next:
   - science/middle/forces/force-and-motion
+  - science/elementary/forces/tools
 ---
 
 ## 핵심 아이디어

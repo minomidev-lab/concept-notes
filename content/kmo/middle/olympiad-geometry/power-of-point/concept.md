@@ -6,6 +6,7 @@ prev:
   - kmo/middle/olympiad-geometry/angle-chasing
 next:
   - kmo/high/olympiad-geometry/ceva-menelaus
+  - kmo/middle/olympiad-geometry/triangle-centers
 ---
 
 ## 닮음에서 나오는 비례식

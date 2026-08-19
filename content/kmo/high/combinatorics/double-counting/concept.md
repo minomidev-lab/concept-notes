@@ -4,6 +4,8 @@ level: high
 order: 2
 prev:
   - kmo/high/combinatorics/induction-invariants
+next:
+  - kmo/high/combinatorics/recurrence
 ---
 
 ## 기법

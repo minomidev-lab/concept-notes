@@ -6,6 +6,8 @@ prev:
   - english/high/grammar/relative-clauses
   - english/middle/reading/main-idea
   - english/high/vocabulary/etymology-context
+next:
+  - english/high/reading/paraphrase
 ---
 
 ## 글의 뼈대 먼저

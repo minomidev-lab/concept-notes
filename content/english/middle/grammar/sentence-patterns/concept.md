@@ -6,6 +6,7 @@ prev:
   - english/elementary/grammar/words-and-sentences
 next:
   - english/high/grammar/relative-clauses
+  - english/high/grammar/inversion
 ---
 
 ## 다섯 가지 뼈대

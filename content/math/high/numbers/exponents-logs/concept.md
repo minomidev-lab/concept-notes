@@ -4,6 +4,8 @@ level: high
 order: 1
 prev:
   - math/middle/numbers/square-roots
+next:
+  - math/high/functions/exp-log-functions
 ---
 
 ## 지수의 확장

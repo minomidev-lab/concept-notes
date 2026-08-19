@@ -4,6 +4,8 @@ level: high
 order: 1
 prev:
   - kjso/middle/biology/mendel
+next:
+  - kjso/high/biology/metabolism-quant
 ---
 
 ## 생체 촉매, 효소

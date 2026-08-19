@@ -2,6 +2,8 @@
 title: 수필과 극
 level: middle
 order: 3
+next:
+  - korean/high/literature/drama-scenario
 ---
 
 ## 수필의 특징

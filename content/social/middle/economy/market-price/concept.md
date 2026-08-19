@@ -6,6 +6,7 @@ prev:
   - social/elementary/economy/production-consumption
 next:
   - social/high/economy/national-economy
+  - social/middle/economy/business
 ---
 
 ## 수요와 공급

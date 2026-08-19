@@ -6,6 +6,7 @@ prev:
   - science/elementary/matter/states-of-matter
 next:
   - science/middle/matter/elements-and-compounds
+  - science/middle/matter/gases
 ---
 
 ## 물질을 이루는 입자

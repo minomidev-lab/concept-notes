@@ -4,6 +4,8 @@ level: middle
 order: 3
 prev:
   - science/middle/life/cells
+next:
+  - science/middle/life/stimulus-response
 ---
 
 ## 소화 — 영양소를 흡수할 수 있게 잘게 쪼개기

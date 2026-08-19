@@ -7,6 +7,7 @@ prev:
 next:
   - social/middle/geography/population-cities
   - social/middle/geography/natural-disasters
+  - social/middle/geography/culture-regions
 ---
 
 ## 기후를 이루는 요소

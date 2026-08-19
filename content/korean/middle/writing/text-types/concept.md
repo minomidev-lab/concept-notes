@@ -4,6 +4,7 @@ level: middle
 order: 1
 prev:
   - korean/elementary/writing/paragraphs
+  - korean/elementary/writing/argument-writing
 next:
   - korean/middle/writing/summarizing
 ---
