@@ -34,3 +34,13 @@ $$\sqrt{a}\sqrt{b} = \sqrt{ab}, \qquad \dfrac{\sqrt{a}}{\sqrt{b}} = \sqrt{\dfrac
 예를 들어 $\sqrt{2}\sqrt{8} = \sqrt{16} = 4$처럼 근호 안의 수를 곱하여 간단히 정리할 수 있다.
 
 정수와 유리수로 채워지지 않던 수직선의 빈틈을 무리수가 메워 실수 체계가 완성되었다. 고등학교에서는 제곱근을 지수의 형태로 확장하여 지수와 로그를 배우게 된다.
+
+## 예제와 풀이
+
+**예제 1 (기본).** 다음을 계산하시오: $\sqrt{2}\sqrt{18}$
+
+**풀이.** $\sqrt{a}\sqrt{b} = \sqrt{ab}$이므로 $\sqrt{2}\sqrt{18} = \sqrt{36} = 6$이다.
+
+**예제 2 (응용).** 다음을 계산하시오: $\dfrac{\sqrt{75}}{\sqrt{3}}$
+
+**풀이.** $\dfrac{\sqrt{a}}{\sqrt{b}} = \sqrt{\dfrac{a}{b}}$이므로 $\dfrac{\sqrt{75}}{\sqrt{3}} = \sqrt{\dfrac{75}{3}} = \sqrt{25} = 5$이다.

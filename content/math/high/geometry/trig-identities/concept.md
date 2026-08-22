@@ -33,3 +33,23 @@ $\sin 75°$의 값을 구해 보자. $75° = 45° + 30°$이므로 덧셈정리�
 $$\sin 75° = \sin 45°\cos 30° + \cos 45°\sin 30° = \dfrac{\sqrt{2}}{2}\cdot\dfrac{\sqrt{3}}{2} + \dfrac{\sqrt{2}}{2}\cdot\dfrac{1}{2} = \dfrac{\sqrt{6}+\sqrt{2}}{4}$$
 
 삼각함수의 그래프가 주기 현상을 시각적으로 보여 주었다면, 덧셈정리는 그 값들 사이의 관계를 대수적으로 계산하는 도구다. 배각 공식은 이후 적분에서 $\sin^2\theta$, $\cos^2\theta$ 꼴을 처리할 때도 핵심적으로 쓰인다.
+
+## 예제와 풀이
+
+**예제 1 (기본).** $\sin 15°$의 값을 구하시오.
+
+**풀이.** $15° = 45° - 30°$이므로 덧셈정리를 적용하면
+
+$$\sin 15° = \sin 45°\cos 30° - \cos 45°\sin 30° = \dfrac{\sqrt{2}}{2}\cdot\dfrac{\sqrt{3}}{2} - \dfrac{\sqrt{2}}{2}\cdot\dfrac{1}{2} = \dfrac{\sqrt{6}-\sqrt{2}}{4}$$
+
+**예제 2 (응용).** $\theta$가 예각이고 $\sin\theta=\dfrac{3}{5}$일 때, $\sin2\theta$와 $\cos2\theta$의 값을 구하시오.
+
+**풀이.** $\theta$가 예각이므로 $\cos\theta>0$이고, $\sin^2\theta+\cos^2\theta=1$에서
+
+$$\cos\theta = \sqrt{1-\dfrac{9}{25}} = \sqrt{\dfrac{16}{25}} = \dfrac{4}{5}$$
+
+배각 공식을 적용하면
+
+$$\sin2\theta = 2\sin\theta\cos\theta = 2\cdot\dfrac{3}{5}\cdot\dfrac{4}{5} = \dfrac{24}{25}$$
+
+$$\cos2\theta = 1-2\sin^2\theta = 1-2\cdot\dfrac{9}{25} = \dfrac{7}{25}$$

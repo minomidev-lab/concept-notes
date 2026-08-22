@@ -29,3 +29,13 @@ $$P(X=k) = \binom{n}{k} p^k (1-p)^{n-k}$$
 $$P(X=2) = \binom{5}{2}\left(\dfrac{1}{2}\right)^2\left(\dfrac{1}{2}\right)^3 = 10 \times \dfrac{1}{32} = \dfrac{5}{16}$$
 
 순열과 조합이 경우의 수를 세는 도구였다면, 이항정리는 그 조합의 수를 다항식 전개의 계수로 재해석한 것이다. 그리고 이 계수가 반복 시행의 확률 계산에 그대로 쓰이면서 이항분포로 이어진다.
+
+## 예제와 풀이
+
+**예제 1 (기본).** $(a+b)^4$을 전개할 때 $a^2b^2$의 계수를 구하시오.
+
+**풀이.** 이항정리에 의해 $a^2b^2$의 계수는 $\binom{4}{2}=\dfrac{4\times3}{2\times1}=6$이다.
+
+**예제 2 (응용).** 확률변수 $X$가 이항분포 $B\left(4,\dfrac{1}{3}\right)$을 따를 때 $P(X=1)$과 평균 $E(X)$, 분산 $V(X)$를 구하시오.
+
+**풀이.** $P(X=1)=\binom{4}{1}\left(\dfrac{1}{3}\right)^1\left(\dfrac{2}{3}\right)^3=4\times\dfrac{1}{3}\times\dfrac{8}{27}=\dfrac{32}{81}$이다. 평균은 $E(X)=np=4\times\dfrac{1}{3}=\dfrac{4}{3}$, 분산은 $V(X)=np(1-p)=4\times\dfrac{1}{3}\times\dfrac{2}{3}=\dfrac{8}{9}$이다.
