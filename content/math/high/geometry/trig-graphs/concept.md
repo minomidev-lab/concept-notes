@@ -4,6 +4,8 @@ level: high
 order: 4
 prev:
   - math/high/geometry/trigonometry
+next:
+  - math/high/geometry/trig-identities
 ---
 
 ## 사인함수와 코사인함수의 그래프

@@ -4,6 +4,8 @@ level: high
 order: 1
 prev:
   - korean/middle/writing/summarizing
+next:
+  - korean/high/writing/nonfiction-reading
 ---
 
 ## 논증의 3요소

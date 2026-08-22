@@ -4,6 +4,8 @@ level: high
 order: 2
 prev:
   - science/high/mechanics/newtons-laws
+next:
+  - science/high/mechanics/circular-gravity
 ---
 
 ## 운동량

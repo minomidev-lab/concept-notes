@@ -5,6 +5,7 @@ order: 2
 prev:
   - math/high/calculus/limits
 next:
+  - math/high/calculus/derivative-applications
   - math/high/calculus/integral
 ---
 

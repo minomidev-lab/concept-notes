@@ -5,6 +5,7 @@ order: 1
 prev:
   - social/middle/economy/market-price
 next:
+  - social/high/economy/economic-policy
   - social/high/economy/trade
 ---
 

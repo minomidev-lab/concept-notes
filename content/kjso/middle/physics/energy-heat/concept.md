@@ -6,6 +6,7 @@ prev:
   - kjso/middle/physics/kinematics
   - science/elementary/matter/heat-transfer
 next:
+  - kjso/high/physics/collisions
   - kjso/high/physics/circuit-analysis
 ---
 

@@ -4,6 +4,8 @@ level: high
 order: 3
 prev:
   - math/middle/statistics/probability
+next:
+  - math/high/statistics/binomial
 ---
 
 ## 순열: 순서가 있는 나열

@@ -5,6 +5,7 @@ order: 3
 prev:
   - science/middle/matter/elements-and-compounds
 next:
+  - science/high/matter/ph-neutralization
   - science/high/matter/chemical-reactions
 ---
 

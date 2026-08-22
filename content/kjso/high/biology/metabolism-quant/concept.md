@@ -4,6 +4,8 @@ level: high
 order: 2
 prev:
   - kjso/high/biology/enzymes
+next:
+  - kjso/high/biology/biotech
 ---
 
 ## 광합성과 호흡의 반응식

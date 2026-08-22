@@ -5,6 +5,7 @@ order: 1
 prev:
   - math/middle/equations/quadratic-equation
 next:
+  - kmo/high/algebra/vieta
   - kmo/middle/algebra/am-gm
 ---
 

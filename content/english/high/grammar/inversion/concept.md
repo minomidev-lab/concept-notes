@@ -4,6 +4,8 @@ level: high
 order: 6
 prev:
   - english/middle/grammar/sentence-patterns
+next:
+  - english/high/grammar/emphasis-ellipsis
 ---
 
 ## 도치란 무엇인가

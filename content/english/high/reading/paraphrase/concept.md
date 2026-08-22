@@ -4,6 +4,8 @@ level: high
 order: 2
 prev:
   - english/high/reading/reading-strategies
+next:
+  - english/high/reading/inference
 ---
 
 ## 패러프레이즈란

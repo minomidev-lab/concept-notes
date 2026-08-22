@@ -5,6 +5,7 @@ order: 2
 prev:
   - kmo/high/combinatorics/induction-invariants
 next:
+  - kmo/high/combinatorics/graph-theory
   - kmo/high/combinatorics/recurrence
 ---
 
